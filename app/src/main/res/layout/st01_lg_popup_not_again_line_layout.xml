@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Mobile Communication Company, LG ELECTRONICS INC., SEOUL, KOREA
+    Copyright(c) 2020 by LG Electronics Inc.
+
+    All rights reserved. No part of this work may be reproduced, stored in a
+    retrieval system, or transmitted by any means without prior written
+    Permission of LG Electronics Inc.
+-->
+<!--
+    android:drawablePadding="16dp"
+    android:ellipsize="marquee"
+-->
+<!-- [LGSMARTUI-163] minHeight, drawablePadding -->
+<CheckedTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/notAgainLine"
+    style="?attr/lgPopupNotAgainTextStyle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="?attr/lgPopupNotAgainMarginTop"
+    android:gravity="left|center_vertical"
+    android:textAlignment="viewStart"
+    android:paddingLeft="?attr/dialogPreferredPadding"
+    android:paddingRight="?attr/dialogPreferredPadding"
+    android:paddingStart="?attr/dialogPreferredPadding"
+    android:paddingEnd="?attr/dialogPreferredPadding"
+    android:minHeight="@dimen/lg_popup_not_again_min_height"
+    app:drawableLeftCompat="?android:attr/listChoiceIndicatorMultiple"
+    app:drawableStartCompat="?android:attr/listChoiceIndicatorMultiple"
+    android:drawablePadding="@dimen/lg_popup_choice_list_item_icon_text_padding"
+    android:visibility="gone" />

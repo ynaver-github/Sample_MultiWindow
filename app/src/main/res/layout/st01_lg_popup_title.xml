@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Mobile Communication Company, LG ELECTRONICS INC., SEOUL, KOREA
+    Copyright(c) 2019 by LG Electronics Inc.
+
+    All rights reserved. No part of this work may be reproduced, stored in a
+    retrieval system, or transmitted by any means without prior written
+    Permission of LG Electronics Inc.
+-->
+<!--
+    [APPST-2]
+    source from "m3_alert_dialog.xml"::"m3_alert_dialog_title.xml"
+-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/topPanel"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+  <!-- If the client uses a customTitle, it will be added here. -->
+
+  <LinearLayout
+      android:id="@+id/title_template"
+      style="?attr/materialAlertDialogTitlePanelStyle">
+
+    <ImageView
+        android:id="@android:id/icon"
+        tools:ignore="ContentDescription"
+        style="?attr/materialAlertDialogTitleIconStyle"/>
+
+    <!-- [LGSMARTUI-188] change to 'IPopupTitle' for single line marquee title -->
+    <com.lge.smartui.popup.IPopupTitle
+        android:id="@+id/alertTitle"
+        style="?attr/materialAlertDialogTitleTextStyle"/>
+  </LinearLayout>
+
+  <!--android:layout_height="@dimen/m3_alert_dialog_title_bottom_margin"-->
+  <!-- [LGSMARTUI-163] height to '@dimen/lg_popup_title_margin_bottom' -->
+  <android.widget.Space
+      android:id="@+id/titleDividerNoCustom"
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/lg_popup_title_margin_bottom"
+      android:visibility="gone"/>
+</LinearLayout>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Mobile Communication Company, LG ELECTRONICS INC., SEOUL, KOREA
+    Copyright(c) 2019 by LG Electronics Inc.
+
+    All rights reserved. No part of this work may be reproduced, stored in a
+    retrieval system, or transmitted by any means without prior written
+    Permission of LG Electronics Inc.
+-->
+<!--
+    see [APPST-13]
+    source from ""MaterialAlertDialog.Material3" :: "android:layout" ==" m3_alert_dialog.xml"
+-->
+<!-- [LGSMARTUI-153] change AlertDialogLayout to 'IPopupLayout' -->
+<com.lge.smartui.popup.IPopupLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:viewBindingIgnore="true"
+    android:id="@+id/parentPanel"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="start|left|top"
+    android:orientation="vertical"
+    android:background="?lgPopupContainerBackgroundColor">
+
+  <include layout="?attr/lgPopupTitleLayout"/>
+
+  <FrameLayout
+      android:id="@+id/mainPanel"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+
+    <View android:id="@+id/scrollIndicatorUp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_gravity="top"
+        android:background="?attr/colorControlHighlight"
+        android:visibility="gone"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false">
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/contentPanel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+          <!-- [LGSMARTUI-163] height to '@dimen/lg_popup_no_title_margin_top' -->
+          <android.widget.Space
+              android:id="@+id/textSpacerNoTitle"
+              android:layout_width="match_parent"
+              android:layout_height="?attr/lgPopupNoTitleMarginTop"
+              android:visibility="gone"/>
+
+          <TextView
+              android:id="@android:id/message"
+              style="?attr/materialAlertDialogBodyTextStyle"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:paddingStart="?attr/dialogPreferredPadding"
+              android:paddingEnd="?attr/dialogPreferredPadding"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/reservedPanel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="?attr/lgPopupReservedContainerMarginTop"
+            android:visibility="gone">
+
+          <FrameLayout
+              android:id="@+id/reservedContainer"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:paddingLeft="?attr/lgPopupReservedLayoutPadding"
+              android:paddingRight="?attr/lgPopupReservedLayoutPadding"/>
+        </LinearLayout>
+
+        <include layout="?attr/lgPopupNotAgainLayout"/>
+
+        <!-- [LGSMARTUI-188] separate 16dp from action top margin to be in scrollable area -->
+        <android.widget.Space
+            android:id="@+id/mainPanelLastBottomSpacer"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/lgPopupMainPanelLastMargin"/>
+
+        <android.widget.Space
+            android:id="@+id/textSpacerNoButtons"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/abc_dialog_padding_top_material"
+            android:visibility="gone"/>
+      </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <View android:id="@+id/scrollIndicatorDown"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_gravity="bottom"
+        android:background="?attr/colorControlHighlight"
+        android:visibility="gone"/>
+
+  </FrameLayout>
+
+  <FrameLayout
+      android:id="@+id/customPanel"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:minHeight="48dp">
+
+    <FrameLayout
+        android:id="@+id/custom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+  </FrameLayout>
+
+  <!-- [LGSMARTUI-153] add 'minHeight' -->
+  <android.widget.Space
+      android:id="@+id/spacerNoActions"
+      android:layout_width="match_parent"
+      android:layout_height="?attr/lgPopupActionLayoutMinHeight"
+      android:minHeight="?attr/lgPopupActionLayoutMinHeight"
+      android:visibility="gone"/>
+
+  <include layout="?attr/lgPopupActionLayout"/>
+
+</com.lge.smartui.popup.IPopupLayout>

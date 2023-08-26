@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+<!-- LG SMARTUI -->
+    <!-- LGPopup general size -->
+    <dimen name="lg_popup_title_margin_top">32dp</dimen> <!-- [LGSMARTUI-163] -->
+    <dimen name="lg_popup_title_margin_bottom">32dp</dimen> <!-- [LGSMARTUI-163] -->
+    <dimen name="lg_popup_no_title_margin_top">32dp</dimen> <!-- [LGSMARTUI-163] -->
+    <dimen name="lg_popup_reserved_container_margin_top">16dp</dimen> <!-- [LGSMARTUI-163] -->
+    <dimen name="lg_popup_no_action_spacer_height">14dp</dimen> <!-- [LGSMARTUI-188] 16<main-last-spacer> + 14 = real 30dp -->
+    <dimen name="lg_popup_action_inner_text_lr_padding">16dp</dimen>
+    <dimen name="lg_popup_action_layout_padding_top">8dp</dimen> <!-- [LGSMARTUI-188] -->
+    <dimen name="lg_popup_action_layout_padding_bottom">8dp</dimen> <!-- [LGSMARTUI-163] -->
+    <integer name="lg_popup_action_layout_right_spacer_visibility">2</integer> <!-- [LGSMARTUI-188] 0:visible, 2:gone -->
+    <dimen name="lg_popup_action_layout_lr_margin">12dp</dimen> <!-- [LGSMARTUI-188] 12 + 4(button_lr_margin) = real margin 16dp -->
+    <dimen name="lg_popup_action_button_lr_margin">4dp</dimen> <!-- [LGSMARTUI-188] 4<Btn1>4+4<Btn2>4 : real padding = 8dp -->
+    <dimen name="lg_popup_action_min_button_width">84dp</dimen>
+    <dimen name="lg_popup_action_min_button_height">73dp</dimen> <!-- [LGSMARTUI-155 / LGSMARTUI-163] GUI button text height size -->
+    <dimen name="lg_popup_not_again_min_height">73dp</dimen> <!-- [LGSMARTUI-163] -->
+    <dimen name="lg_popup_not_again_margin_top_default">16dp</dimen>
+    <dimen name="lg_popup_not_again_margin_top_init_guide_popup">16dp</dimen>
+    <dimen name="lg_popup_main_panel_last_margin">16dp</dimen> <!-- [LGSMARTUI-188] -->
+    <dimen name="lg_popup_choice_list_desc_padding_top">0dp</dimen> <!-- [LGSMARTUI-163] -->
+    <dimen name="lg_popup_choice_list_desc_padding_bottom">9dp</dimen> <!-- [LGSMARTUI-163] -->
+    <dimen name="lg_popup_choice_list_item_icon_text_padding">24dp</dimen> <!-- [LGSMARTUI-163] -->
+    <dimen name="lg_popup_choice_list_item_top_bottom_padding">15.165dp</dimen> <!-- [LGSMARTUI-163] -->
+    <dimen name="lg_popup_initial_guide_image_top_margin">24dp</dimen> <!-- [LGSMARTUI-163] -->
+    <dimen name="lg_popup_dialog_major_width">684dp</dimen> <!-- [LGSMARTUI-117] [LGSMARTUI-188] -->
+    <dimen name="lg_popup_dialog_minor_width">504dp</dimen> <!-- [LGSMARTUI-188] -->
+
+    <!-- LGPopup text size / text space -->
+    <dimen name="lg_popup_title_text_size">@dimen/type_at01_dp</dimen> <!-- [LGSMARTUI-188] -->
+    <dimen name="lg_popup_description_text_size">@dimen/type_ap01_dp</dimen> <!-- [LGSMARTUI-188] -->
+    <dimen name="lg_popup_description_line_height">29dp</dimen> <!-- [LGSMARTUI-188] -->
+    <dimen name="lg_popup_not_again_text_size">@dimen/type_ap01_dp</dimen> <!-- [LGSMARTUI-188] -->
+    <dimen name="lg_popup_action_button_text_size">@dimen/type_ap01_dp</dimen> <!-- [LGSMARTUI-188] -->
+    <dimen name="lg_popup_choice_list_desc_text_size">@dimen/type_e01_dp</dimen> <!-- [LGSMARTUI-188] -->
+    <dimen name="lg_popup_choice_list_item_title_text_size">@dimen/type_ap01_dp</dimen> <!-- [LGSMARTUI-188] -->
+    <dimen name="lg_popup_spinner_desc_text_size">@dimen/type_ap01_dp</dimen> <!-- [LGSMARTUI-188] -->
+    <dimen name="lg_popup_edit_popup_edit_text_size">@dimen/type_ap01_dp</dimen> <!-- [LGSMARTUI-188] -->
+    <dimen name="lg_popup_progress_sub_desc_text_size">@dimen/type_e01_dp</dimen> <!-- [LGSMARTUI-188] -->
+
+    <!-- Legacy Alert Dialog -->
+    <dimen name="legacy_alert_dialog_action_layout_padding_top">20dp</dimen> <!-- [LGSMARTUI-188] 16 + 8 - 4-->
+
+
+</resources>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Mobile Communication Company, LG ELECTRONICS INC., SEOUL, KOREA
+    Copyright(c) 2019 by LG Electronics Inc.
+
+    All rights reserved. No part of this work may be reproduced, stored in a
+    retrieval system, or transmitted by any means without prior written
+    Permission of LG Electronics Inc.
+-->
+<!--
+    [APPST-2]
+    source from "m3_alert_dialog.xml"::"m3_alert_dialog_actions.xml"
+-->
+
+<!-- [LGSMARTUI-153] remove 'minHeight' to reseve full size buttons -->
+<!-- [LGSMARTUI-163] change padding top/bottom -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/buttonPanel"
+    style="?attr/buttonBarStyle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true"
+    android:scrollIndicators="top|bottom">
+
+  <!-- [LGSMARTUI-198] changed to 'IButtonBarLayout' -->
+  <com.lge.smartui.popup.IButtonBarLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:gravity="bottom"
+      android:layoutDirection="locale"
+      android:orientation="horizontal"
+      style="?attr/lgPopupButtonBarLayoutStyle">
+
+    <android.widget.Space
+        android:id="@+id/spacer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:visibility="?attr/materialAlertDialogButtonSpacerVisibility"/>
+
+    <Button
+        android:id="@android:id/button3"
+        style="?attr/buttonBarNeutralButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@android:id/button2"
+        style="?attr/buttonBarNegativeButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="negative"/>
+
+    <Button
+        android:id="@android:id/button1"
+        style="?attr/buttonBarPositiveButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="ok"/>
+
+    <!-- [LGSMARTUI-188] notouch center button alignment -->
+    <android.widget.Space
+        android:id="@+id/spacerRight"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:visibility="?attr/lgPopupActionRightSpacerVisibility"/>
+
+  </com.lge.smartui.popup.IButtonBarLayout>
+
+</ScrollView>

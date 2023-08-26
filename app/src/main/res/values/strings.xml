@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MultiWindowSample</string>
+
+
+    <string name="dialog_close">Close</string>
+    <string name="not_support_multi_window">Not support in Multi Window</string>
+
+</resources>

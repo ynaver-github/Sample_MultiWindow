@@ -1,0 +1,300 @@
+
+<!--
+    Mobile Communication Company, LG ELECTRONICS INC., SEOUL, KOREA
+    Copyright(c) 2020 by LG Electronics Inc.
+
+    All rights reserved. No part of this work may be reproduced, stored in a
+    retrieval system, or transmitted by any means without prior written
+    Permission of LG Electronics Inc.
+-->
+<resources>
+
+<!-- LG SMARTUI -->
+    <declare-styleable name="StyleLGPopup">
+        <!-- from "Theme.LGE.Default" ::
+             <item name="com.lge:dialogGravityBottom">@bool/dialog_gravity_bottom</item> -->
+        <attr name="lgDialogGravity">
+            <enum name="center" value="0" />
+            <enum name="top" value="1" />
+            <enum name="bottom" value="2" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="LGCheckedTextView">
+        <attr name="lgNoTouchHoveredBackground" format="reference"/> <!-- LGSMARTUI-192 -->
+    </declare-styleable>
+
+    <!-- from "ThemeOverlay.Material3.MaterialAlertDialog" -->
+    <style name="StyleLGPopupBase" parent="@style/LGSmartTheme.ThemeOverlay.AlertDialog">
+        <item name="lgDialogGravity">center</item>
+        <item name="alertDialogStyle">@style/StyleLGPopupBase.AlertDialogStyle</item>
+        <item name="materialAlertDialogButtonSpacerVisibility">0</item> <!-- [LGSMARTUI-2] '0'-visible, '2'-gone -->
+        <item name="lgPopupActionRightSpacerVisibility">@integer/lg_popup_action_layout_right_spacer_visibility</item> <!-- [LGSMARTUI-188] -->
+        <item name="materialAlertDialogTitlePanelStyle">@style/StyleLGPopupBase.Title.Panel</item>
+        <item name="materialAlertDialogTitleTextStyle">@style/StyleLGPopupBase.Title.Text</item>
+        <item name="materialAlertDialogBodyTextStyle">@style/StyleLGPopupBase.Desc.Text</item>
+        <item name="lgPopupButtonBarLayoutStyle">@style/StyleLGPopupButtonBarLayout</item>
+        <item name="buttonBarButtonStyle">@style/StyleLGPopupButton</item>
+        <item name="buttonBarPositiveButtonStyle">@style/StyleLGPopupButton</item>
+        <item name="buttonBarNegativeButtonStyle">@style/StyleLGPopupButton</item>
+        <item name="buttonBarNeutralButtonStyle">@style/StyleLGPopupButton.Neutral</item>
+        <item name="lgPopupTitleLayout">@layout/st01_lg_popup_title</item>
+        <item name="lgPopupNoTitleMarginTop">@dimen/lg_popup_no_title_margin_top</item>
+        <item name="lgPopupReservedContainerMarginTop">@dimen/lg_popup_reserved_container_margin_top</item>
+        <item name="lgPopupNotAgainLayout">@layout/st01_lg_popup_not_again_line_layout</item>
+        <item name="lgPopupNotAgainTextStyle">@style/StyleLGPopupBase.NotAgain.CheckedTextView</item>
+        <item name="lgPopupNotAgainMarginTop">@dimen/lg_popup_not_again_margin_top_default</item>
+        <item name="lgPopupMainPanelLastMargin">@dimen/lg_popup_main_panel_last_margin</item>
+        <item name="lgPopupActionLayout">@layout/st01_lg_popup_actions</item>
+        <item name="lgPopupActionLayoutMinHeight">@dimen/lg_popup_no_action_spacer_height</item>
+        <item name="lgPopupContainerBackgroundColor">?android:attr/colorBackground</item>
+
+        <!-- dialog container left/right padding -->
+        <item name="dialogPreferredPadding">32dp</item>
+        <item name="lgPopupReservedLayoutPadding">?attr/dialogPreferredPadding</item>
+
+        <!-- [LGSMARTUI-2] fixed dialog size -->
+        <item name="android:windowMinWidthMajor">@dimen/lg_popup_dialog_major_width</item>
+        <item name="android:windowMinWidthMinor">@dimen/lg_popup_dialog_minor_width</item>
+        <item name="windowFixedWidthMajor">@dimen/lg_popup_dialog_major_width</item>
+        <item name="windowFixedWidthMinor">@dimen/lg_popup_dialog_minor_width</item>
+
+        <!-- [] dialog scrim dim amount -->
+        <item name="android:backgroundDimAmount">0.45</item>
+
+        <!-- [LGSMARTUI-171] prevent dlg creation crash when caller theme has action bar flag -->
+        <item name="android:windowNoTitle">true</item> <!-- [ASDUP-197] 6) -->
+        <item name="android:windowActionBar">false</item> <!-- [ASDUP-197] 6) -->
+    </style>
+
+    <style name="StyleLGPopupBase.AlertDialogStyle" parent="@style/MaterialAlertDialog.Material3">
+        <item name="android:layout">@layout/st01_lg_popup_alert_dialog</item>
+        <item name="shapeAppearance">@style/StyleLGPopupBase.ShapeAppearance.MediumComponent</item>
+        <item name="shapeAppearanceOverlay">@null</item>
+
+        <!-- [LGSMARTUI-2] dialog inset padding, no left/right padding -->
+        <item name="backgroundInsetStart">0dp</item>
+        <item name="backgroundInsetEnd">0dp</item>
+        <!--item name="backgroundInsetTop">@dimen/mtrl_alert_dialog_background_inset_top</item-->
+        <!--item name="backgroundInsetBottom">@dimen/mtrl_alert_dialog_background_inset_bottom</item-->
+
+    </style>
+
+    <style name="StyleLGPopupBase.Title.Panel" parent="MaterialAlertDialog.Material3.Title.Panel">
+        <item name="android:paddingLeft">?attr/dialogPreferredPadding</item>
+        <item name="android:paddingRight">?attr/dialogPreferredPadding</item>
+        <item name="android:paddingTop">@dimen/lg_popup_title_margin_top</item> <!-- LGSMARTUI-163 -->
+    </style>
+    <style name="StyleLGPopupBase.Title.Text" parent="MaterialAlertDialog.Material3.Title.Text">
+        <item name="android:textAppearance">@style/StyleLGPopupBase.TextAppearance.Title</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+
+        <!-- [LGSMARTUI-198] multi-line title -->
+        <item name="android:singleLine">false</item>
+        <item name="android:maxLines">2</item>
+    </style>
+    <style name="StyleLGPopupBase.TextAppearance.Title" parent="TextAppearance.Material3.HeadlineSmall">
+        <item name="fontFamily">sans-serif-regular</item>
+        <item name="android:fontFamily">sans-serif-regular</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">@dimen/lg_popup_title_text_size</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:layout_height">68dp</item> <!-- seems not work -->
+        <!--item name="android:lineSpacingExtra">32sp</item-->
+    </style>
+
+    <style name="StyleLGPopupBase.Desc.Text" parent="MaterialAlertDialog.Material3.Body.Text">
+        <item name="android:textAppearance">@style/StyleLGPopupBase.TextAppearance.Desc</item>
+        <item name="android:textColor">@color/st01_lg_popup_text_on_surface_variant</item> <!-- LGSMARTUI-163 -->
+        <item name="android:textDirection">locale</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:letterSpacing">0</item>
+
+        <!-- [LGSMARTUI-117] 'lineSpacingMultiplier' not work with using 'textAppearance' -->
+        <!-- instead of it, we use 'lineHeight' attribute of 'MaterialTextView' -->
+        <!--item name="android:lineSpacingMultiplier">1.2</item> < 26dp / 20dp -->
+        <item name="lineHeight">@dimen/lg_popup_description_line_height</item>
+    </style>
+    <style name="StyleLGPopupBase.TextAppearance.Desc" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textSize">@dimen/lg_popup_description_text_size</item>
+    </style>
+    <style name="StyleLGPopupBase.Desc.Text.Small16">
+        <item name="android:textAppearance">@style/StyleLGPopupBase.TextAppearance.Desc.Small16</item>
+    </style>
+    <style name="StyleLGPopupBase.Desc.Text.Small18">
+        <item name="android:textAppearance">@style/StyleLGPopupBase.TextAppearance.Desc.Small18</item>
+    </style>
+    <style name="StyleLGPopupBase.TextAppearance.Desc.Small16">
+        <item name="android:textSize">@dimen/type_d01_dp</item>
+    </style>
+    <style name="StyleLGPopupBase.TextAppearance.Desc.Small18">
+        <item name="android:textSize">@dimen/type_e01_dp</item>
+    </style>
+
+    <!-- padding top = 36dp = 24dp(gui assigned margin top) + 12dp(desc/list bottom) -->
+    <style name="StyleLGPopupButtonBarLayout">
+        <item name="android:paddingTop">@dimen/lg_popup_action_layout_padding_top</item>
+        <item name="android:paddingBottom">@dimen/lg_popup_action_layout_padding_bottom</item>
+        <item name="android:paddingStart">@dimen/lg_popup_action_layout_lr_margin</item>
+        <item name="android:paddingLeft">@dimen/lg_popup_action_layout_lr_margin</item>
+        <item name="android:paddingEnd">@dimen/lg_popup_action_layout_lr_margin</item>
+        <item name="android:paddingRight">@dimen/lg_popup_action_layout_lr_margin</item>
+    </style>
+
+    <!-- [LGSMARTUI-155] define 'minHeight', 'paddingTop', 'paddingBottom' -->
+    <style name="StyleLGPopupButton" parent="@style/Widget.Material3.Button.TextButton.Dialog">
+        <item name="android:minWidth">@dimen/lg_popup_action_min_button_width</item>
+        <item name="android:minHeight">@dimen/lg_popup_action_min_button_height</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:paddingStart">@dimen/lg_popup_action_inner_text_lr_padding</item>
+        <item name="android:paddingLeft">@dimen/lg_popup_action_inner_text_lr_padding</item>
+        <item name="android:paddingEnd">@dimen/lg_popup_action_inner_text_lr_padding</item>
+        <item name="android:paddingRight">@dimen/lg_popup_action_inner_text_lr_padding</item>
+        <item name="android:layout_marginLeft">@dimen/lg_popup_action_button_lr_margin</item>
+        <item name="android:layout_marginStart">@dimen/lg_popup_action_button_lr_margin</item>
+        <item name="android:layout_marginRight">@dimen/lg_popup_action_button_lr_margin</item>
+        <item name="android:layout_marginEnd">@dimen/lg_popup_action_button_lr_margin</item>
+        <!-- [LGSMARTUI-225] remove "android:capitalize"=words && "android:inputType"=textCapWords
+             due to it is not work, and it caused button 'editable' by keyboard -->
+        <item name="android:textColor">@color/st01_lg_popup_text_button_foreground_color_selector</item>
+        <item name="android:textAppearance">@style/StyleLGPopupButton.TextAppearance</item> <!-- not work -->
+        <item name="android:textSize">@dimen/lg_popup_action_button_text_size</item> <!-- LGSMARTUI-163 -->
+        <item name="android:letterSpacing">0</item>
+        <item name="shapeAppearanceOverlay">@style/StyleLGPopupButton.ShapeAppearanceOverlay</item> <!-- LGSMARTUI-163 -->
+        <item name="rippleColor">@color/text_button_ripple_color</item> <!-- LGSMARTUI-188 - 4) -->
+    </style>
+    <style name="StyleLGPopupButton.Neutral"/> <!-- see "Widget.Material3.Button.TextButton.Dialog.Flush" -->
+    <style name="StyleLGPopupButton.TextAppearance" parent="TextAppearance.Material3.BodyMedium"> <!--parent="TextAppearance.Material3.LabelLarge"-->
+        <!--item name="fontFamily">sans-serif</item-->
+        <!--item name="fontFamily">sans-serif-regular</item-->
+        <item name="android:textSize">@dimen/lg_popup_action_button_text_size</item> <!-- not work -->
+        <item name="android:textColor">@color/st01_lg_popup_text_button_foreground_color_selector</item> <!-- not work -->
+        <!--item name="android:textStyle">normal</item-->
+    </style>
+    <style name="StyleLGPopupButton.ShapeAppearanceOverlay" parent="ShapeAppearanceOverlay.Material3.Button"> <!-- LGSMARTUI-163 -->
+        <item name="cornerSize">4dp</item> <!-- from '@style/LGButtonShapeAppearanceOverlay' -->
+    </style>
+
+    <style name="StyleLGPopupBase.ShapeAppearance.MediumComponent" parent="ShapeAppearance.Material3.MediumComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">4dp</item>
+    </style>
+
+    <style name="StyleLGPopupBase.NotAgain.CheckedTextView" parent="@style/Widget.AppCompat.TextView">
+        <item name="android:textSize">@dimen/lg_popup_not_again_text_size</item>
+        <item name="android:drawablePadding">16dp</item>
+        <item name="android:ellipsize">marquee</item>
+    </style>
+
+    <!-- [LGSMARTUI-214] original parent = "ThemeOverlay.Material3.MaterialAlertDialog" -->
+    <style name="LGSmartTheme.ThemeOverlay.AlertDialog" parent="Base.ThemeOverlay.AppCompat">
+        <!-- "ThemeOverlay.Material3.MaterialAlertDialog" -->
+        <item name="android:windowElevation">6dp</item> <!-- private '@dimen/m3_alert_dialog_elevation' -->
+        <item name="android:checkedTextViewStyle">@style/Widget.Material3.CheckedTextView</item>
+        <item name="materialAlertDialogTitleIconStyle">@style/MaterialAlertDialog.Material3.Title.Icon</item>
+
+        <!-- "Base.V14.ThemeOverlay.MaterialComponents.MaterialAlertDialog" -->
+        <item name="android:dialogCornerRadius">@null</item>
+
+        <!-- "Base.V7.ThemeOverlay.AppCompat.Dialog" -->
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <!--item name="android:colorBackground">?attr/colorBackgroundFloating</item--> <!-- this MUST be LGSmartUI color !!! -->
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowTitleStyle">@style/RtlOverlay.DialogWindowTitle.AppCompat</item>
+        <item name="android:windowTitleBackgroundStyle">@style/Base.DialogWindowTitleBackground.AppCompat</item>
+        <item name="android:windowBackground">@drawable/abc_dialog_material_background</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@style/Animation.AppCompat.Dialog</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowActionModeOverlay">true</item>
+        <item name="listPreferredItemPaddingLeft">24dip</item>
+        <item name="listPreferredItemPaddingRight">24dip</item>
+        <item name="android:listDivider">@null</item>
+        <item name="windowFixedHeightMajor">@null</item>
+        <item name="windowFixedHeightMinor">@null</item>
+        <item name="android:buttonBarStyle">@style/Widget.AppCompat.ButtonBar.AlertDialog</item>
+        <item name="android:borderlessButtonStyle">@style/Widget.AppCompat.Button.Borderless</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+    </style>
+    <style name="LGSmartTheme.ThemeOverlay.AlertDialog.Centered">
+        <item name="materialAlertDialogTitlePanelStyle">@style/MaterialAlertDialog.Material3.Title.Panel.CenterStacked</item>
+        <item name="materialAlertDialogTitleIconStyle">@style/MaterialAlertDialog.Material3.Title.Icon.CenterStacked</item>
+        <item name="materialAlertDialogTitleTextStyle">@style/MaterialAlertDialog.Material3.Title.Text.CenterStacked</item>
+    </style>
+
+    <!--=========================================================================================-->
+
+    <!-- LGNormalPopup style -->
+    <style name="StyleLGPopup" parent="@style/StyleLGPopupBase"/>
+    <style name="StyleLGPopup.AlertDialogStyle" parent="@style/StyleLGPopupBase.AlertDialogStyle"/>
+
+    <!-- LGCustomPopup style -->
+    <style name="StyleLGCustomPopup" parent="@style/StyleLGPopupBase">
+        <item name="lgPopupMainPanelLastMargin">0dp</item> <!-- [LGSMARTUI-188] -->
+    </style>
+
+
+    <!-- [LGSMARTUI-120] context menu styling -->
+    <style name="Style.contextPopupMenuStyle" parent="@style/Widget.Material3.PopupMenu.ContextMenu">
+        <item name="android:popupElevation">0dp</item> <!-- [LGSMARTUI-120] @dimen/m3_menu_elevation -->
+        <item name="android:popupBackground">?attr/popupMenuBackground</item>
+        <item name="android:overlapAnchor">true</item>
+
+        <!-- LGE added -->
+        <!-- not work  item name="android:dropDownHorizontalOffset">40dp</item -->
+        <!-- not work  item name="android:dropDownWidth">700dp</item -->
+
+        <!-- android-31
+        <item name="dropDownSelector">?attr/listChoiceBackgroundIndicator</item>
+        <item name="popupBackground">@drawable/popup_background_material</item>
+        <item name="popupElevation">@dimen/floating_window_z</item>
+        <item name="popupAnimationStyle">@empty</item>
+        <item name="popupEnterTransition">@transition/popup_window_enter</item>
+        <item name="popupExitTransition">@transition/popup_window_exit</item>
+        <item name="dropDownVerticalOffset">0dip</item>
+        <item name="dropDownHorizontalOffset">0dip</item>
+        <item name="dropDownWidth">wrap_content</item>
+        -->
+    </style>
+
+    <!-- [ASDUP-206] legacy AlertDialog styles -->
+    <style name="LegacyAlertDialog.Theme" parent="@style/ThemeOverlay.Material3.Dialog.Alert">
+        <item name="alertDialogStyle">@style/LegacyAlertDialog.Style</item>
+        <item name="dialogPreferredPadding">32dp</item>
+        <item name="materialAlertDialogBodyTextStyle">@style/StyleLGPopupBase.Desc.Text</item>
+        <item name="materialAlertDialogTitleIconStyle">@style/MaterialAlertDialog.Material3.Title.Icon</item>
+        <item name="materialAlertDialogTitlePanelStyle">@style/StyleLGPopupBase.Title.Panel</item>
+        <item name="materialAlertDialogTitleTextStyle">@style/StyleLGPopupBase.Title.Text</item>
+        <item name="lgPopupButtonBarLayoutStyle">@style/StyleLGPopupButtonBarLayout.LegacyAlertDialog</item>
+        <item name="buttonBarButtonStyle">@style/StyleLGPopupButton</item>
+        <item name="buttonBarPositiveButtonStyle">@style/StyleLGPopupButton</item>
+        <item name="buttonBarNegativeButtonStyle">@style/StyleLGPopupButton</item>
+        <item name="buttonBarNeutralButtonStyle">@style/StyleLGPopupButton.Neutral</item>
+        <item name="lgPopupMainPanelLastMargin">@dimen/lg_popup_main_panel_last_margin</item>
+        <item name="lgPopupActionLayoutMinHeight">@dimen/lg_popup_no_action_spacer_height</item>
+        <item name="materialAlertDialogButtonSpacerVisibility">0</item>
+        <item name="lgPopupActionRightSpacerVisibility">@integer/lg_popup_action_layout_right_spacer_visibility</item> !-- [LGSMARTUI-188] -->
+        <item name="android:windowMinWidthMajor">@dimen/lg_popup_dialog_major_width</item>
+        <item name="android:windowMinWidthMinor">@dimen/lg_popup_dialog_minor_width</item>
+        <item name="windowFixedWidthMajor">@dimen/lg_popup_dialog_major_width</item>
+        <item name="windowFixedWidthMinor">@dimen/lg_popup_dialog_minor_width</item>
+        <item name="android:backgroundDimAmount">0.45</item>
+    </style>
+    <style name="LegacyAlertDialog.Style" parent="@style/AlertDialog.AppCompat.Light">
+        <item name="android:layout">@layout/st01_legacy_abc_alert_dialog_material</item>
+        <item name="shapeAppearance">@style/StyleLGPopupBase.ShapeAppearance.MediumComponent</item>
+        <item name="shapeAppearanceOverlay">@null</item>
+        <item name="backgroundInsetStart">0dp</item>
+        <item name="backgroundInsetEnd">0dp</item>
+    </style>
+    <style name="StyleLGPopupButtonBarLayout.LegacyAlertDialog"> <!-- [LGSMARTUI-188] -->
+        <item name="android:paddingTop">@dimen/legacy_alert_dialog_action_layout_padding_top</item>
+    </style>
+    <!-- end of [ASDUP-206] -->
+
+</resources>

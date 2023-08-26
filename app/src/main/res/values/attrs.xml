@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Mobile Communication Company, LG ELECTRONICS INC., SEOUL, KOREA
+    Copyright(c) 2020 by LG Electronics Inc.
+
+    All rights reserved. No part of this work may be reproduced, stored in a
+    retrieval system, or transmitted by any means without prior written
+    Permission of LG Electronics Inc.
+-->
+
+<resources>
+
+<!--    jh.ha TEST SMARTUI-->
+<!-- LG SMARTUI -->
+    <!-- new attr for LGPopup classes -->
+    <attr name="lgNormalPopupStyle" format="reference"/>
+    <attr name="lgCustomPopupStyle" format="reference"/>
+    <attr name="lgChoiceListPopupStyle" format="reference"/>
+    <attr name="lgInitialGuidePopupStyle" format="reference"/>
+    <attr name="lgProgressPopupStyle" format="reference"/>
+    <attr name="lgSpinnerProgressPopupStyle" format="reference"/>
+    <attr name="lgEditTextPopupEditTextViewStyle" format="reference"/>
+    <attr name="lgEditTextPopupStyle" format="reference"/>
+    <attr name="lgPopupTitleLayout" format="reference"/>
+    <attr name="lgPopupNoTitleMarginTop" format="dimension"/>
+    <attr name="lgPopupReservedContainerMarginTop" format="dimension"/>
+    <attr name="lgPopupReservedLayout" format="reference"/>
+    <attr name="lgPopupReservedLayoutPadding" format="dimension"/>
+    <attr name="lgProgressPopupDescTextStyle" format="reference"/>
+    <attr name="lgPopupNotAgainLayout" format="reference"/>
+    <attr name="lgPopupNotAgainMarginTop" format="dimension"/>
+    <attr name="lgPopupNotAgainTextStyle" format="reference"/>
+    <attr name="lgPopupMainPanelLastMargin" format="dimension"/> <!-- [LGSMARTUI-188] -->
+    <attr name="lgPopupActionLayout" format="reference"/>
+    <attr name="lgPopupActionRightSpacerVisibility" format="integer"/> <!-- [LGSMARTUI-188] -->
+    <attr name="lgPopupActionLayoutMinHeight" format="dimension"/>
+    <attr name="lgPopupButtonBarLayoutStyle" format="reference"/>
+    <attr name="lgPopupContainerBackgroundColor" format="color"/>
+
+</resources>

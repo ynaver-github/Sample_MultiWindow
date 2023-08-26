@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+<!--jh.ha TEST SMARTUI-->
+<!-- LG SMARTUI -->
+    <!--General-->
+    <dimen name="type_b01_sp">12sp</dimen>
+    <dimen name="type_b01_dp">12dp</dimen>
+    <dimen name="type_d01_sp">16sp</dimen>
+    <dimen name="type_d01_dp">16dp</dimen>
+    <dimen name="type_e01_sp">18sp</dimen>
+    <dimen name="type_e01_dp">18dp</dimen>
+    <dimen name="type_e02_sp">20sp</dimen>
+    <dimen name="type_e02_dp">20dp</dimen>
+    <dimen name="type_g01_sp">24sp</dimen>
+    <dimen name="type_g01_dp">24dp</dimen>
+    <dimen name="type_h01_sp">28sp</dimen>
+    <dimen name="type_h01_dp">28dp</dimen>
+    <!--App-->
+    <dimen name="type_ae01_sp">11sp</dimen>
+    <dimen name="type_ae01_dp">11dp</dimen>
+    <dimen name="type_ag01_sp">13sp</dimen>
+    <dimen name="type_ag01_dp">13dp</dimen>
+    <dimen name="type_ah01_sp">14sp</dimen>
+    <dimen name="type_ah01_dp">14dp</dimen>
+    <dimen name="type_ap01_sp">22sp</dimen>
+    <dimen name="type_ap01_dp">22dp</dimen>
+    <dimen name="type_at01_sp">26sp</dimen>
+    <dimen name="type_at01_dp">26dp</dimen>
+    <dimen name="type_ax01_sp">30sp</dimen>
+    <dimen name="type_ax01_dp">30dp</dimen>
+    <dimen name="type_ay01_sp">32sp</dimen>
+    <dimen name="type_ay01_dp">32dp</dimen>
+    <dimen name="type_ba01_sp">34sp</dimen>
+    <dimen name="type_ba01_dp">34dp</dimen>
+    <dimen name="type_bc01_sp">36sp</dimen>
+    <dimen name="type_bc01_dp">36dp</dimen>
+    <dimen name="type_bd01_sp">40sp</dimen>
+    <dimen name="type_bd01_dp">40dp</dimen>
+    <dimen name="type_bi01_sp">50sp</dimen>
+    <dimen name="type_bi01_dp">50dp</dimen>
+    <dimen name="type_bj01_sp">114sp</dimen>
+    <dimen name="type_bj01_dp">114dp</dimen>
+    <dimen name="type_bj02_sp">160sp</dimen>
+    <dimen name="type_bj02_dp">160dp</dimen>
+    <dimen name="type_cf01_sp">54sp</dimen>
+    <dimen name="type_cf01_dp">54dp</dimen>
+    <dimen name="type_di01_sp">92sp</dimen>
+    <dimen name="type_di01_dp">92dp</dimen>
+
+    <!--    jh.ha TEST AWS-->
+    <dimen name="activity_horizontal_margin">20dp</dimen>
+    <dimen name="activity_vertical_margin">70dp</dimen>
+    <dimen name="activity_button_border">1dp</dimen>
+    <dimen name="activity_button_radius">2dp</dimen>
+    <dimen name="nav_header_height">160dp</dimen>
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+</resources>
