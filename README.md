@@ -12,7 +12,7 @@ $ git remote add origin https://github.com/ynaver-github/sample_multiwindow.git
 
 $ git fetch
 
-$ git remote set-head orgin master
+$ git remote set-head origin master
 
 $ git pull origin master
 
